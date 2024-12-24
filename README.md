@@ -4,11 +4,17 @@ This project implements a content-based recommendation system using machine lear
 
 ## Table of Contents
 
+- [Project Objective](#project-objective)
 - [Project Overview](#project-overview)
 - [Dataset](#dataset)
 - [Data Pipeline](#data-pipeline)
 - [Conclusion](#conclusion)
-  
+- [Usage](#usage)
+- [Acknowledgements](#acknowledgements)
+
+## Project Objective
+The objective of this project is to develop a content-based recommendation system for Netflix movies and TV shows using machine learning techniques, such as clustering and cosine similarity, to provide personalized movie recommendations.
+
 ## Project Overview
 
 This Netflix recommendation system leverages machine learning algorithms to classify and recommend Netflix shows. The key steps include:
@@ -47,6 +53,11 @@ We applied K-Means and Agglomerative Hierarchical clustering algorithms to group
 ### 6. Build Content Based Recommendation System:
 A content-based recommender system was built using the similarity matrix obtained from cosine similarity. This system recommends 10 movies or shows based on the type of movie/show the user has watched.
 
+## Usage
+1. Clone the repository.
+2. Install the required dependencies.
+3. Run the `Netflix_Recommendation_System.ipynb` notebook to explore the analysis, clustering, and recommendation system.
+
 ## Conclusion
 
 In this project, we worked on a text clustering problem where we aimed to classify and group Netflix shows into clusters such that the shows within a cluster are similar to each other, and those in different clusters are dissimilar. The process involved the following steps:
@@ -58,4 +69,8 @@ In this project, we worked on a text clustering problem where we aimed to classi
 - **Recommendation System**: Built a content-based recommendation system based on cosine similarity.
 
 The optimal number of clusters was found to be 4, and the recommender system successfully recommended shows based on the user's viewing preferences.
+
+## Acknowledgements
+- Dataset from [Kaggle Netflix Dataset](https://www.kaggle.com/datasets/sambhajizambre/netflix-movies-and-tv-shows-clustering)
+
 
