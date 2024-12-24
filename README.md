@@ -1,6 +1,3 @@
-# Netflix-Recommendation-System
-A content-based recommendation system for Netflix movies using machine learning. It clusters movies based on features like genre and cast, then generates personalized recommendations using K-Means, Hierarchical clustering, and cosine similarity. The project includes data preprocessing and PCA for dimensionality reduction.
-
 # Netflix Recommendation System
 
 This project implements a content-based recommendation system using machine learning techniques. The system clusters Netflix movies based on various features such as genre, director, and cast, and provides personalized recommendations to users. It utilizes algorithms like K-Means clustering, Agglomerative Hierarchical clustering, and cosine similarity to generate the suggestions.
@@ -8,12 +5,16 @@ This project implements a content-based recommendation system using machine lear
 ## Table of Contents
 
 - [Project Overview](#project-overview)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Results](#results)
-- [License](#license)
-
+- [Dataset](#dataset)
+- [Data Pipeline](#data-pipeline)
+  - [Analyze Data](#analyze-data)
+  - [EDA](#eda)
+  - [Data Cleaning](#data-cleaning)
+  - [Textual Data Preprocessing](#textual-data-preprocessing)
+  - [Clusters Implementation](#clusters-implementation)
+  - [Build Content Based Recommendation System](#build-content-based-recommendation-system)
+- [Conclusion](#conclusion)
+  
 ## Project Overview
 
 This Netflix recommendation system leverages machine learning algorithms to classify and recommend Netflix shows. The key steps include:
@@ -22,10 +23,45 @@ This Netflix recommendation system leverages machine learning algorithms to clas
 - **Clustering**: Group similar shows using K-Means and Agglomerative clustering.
 - **Content-Based Recommendation**: Use cosine similarity to recommend movies based on user preferences.
 
-## Technologies Used
+## Dataset
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Jupyter Notebook
+The dataset is collected from Flixable, a third-party Netflix search engine. This dataset consists of TV shows and movies available on Netflix as of 2019. It includes over 7787 records and 12 attributes. Each attribute provides detailed information about the movies/TV shows. More details of the dataset can be found on the [Kaggle website](https://www.kaggle.com/datasets/sambhajizambre/netflix-movies-and-tv-shows-clustering?select=netflix_titles.csv).
+
+## Data Pipeline
+
+### Analyze Data:
+In this initial step, we analyzed various features of the dataset. We examined the shape of the data, the data types of each feature, and the statistical summary to better understand the structure and characteristics of the dataset.
+
+### EDA:
+Exploratory Data Analysis (EDA) is crucial for understanding the patterns and relationships within the data. During EDA, we observed trends and dependencies that were helpful for further data processing.
+
+### Data Cleaning:
+Data cleaning involved checking for duplicate entries, handling missing values by replacing them with empty strings or dropping rows, and detecting and treating outliers to ensure clean and usable data.
+
+### Textual Data Preprocessing:
+For clustering, we preprocessed the data based on the following attributes: director, cast, country, genre, rating, and description. This stage involved:
+- Removing stop words and punctuation marks
+- Converting all textual data to lowercase
+- Stemming words to generate meaningful roots
+- Tokenizing the corpus and performing word vectorization
+
+Principal Component Analysis (PCA) was used to reduce dimensionality and handle the curse of dimensionality.
+
+### Clusters Implementation:
+We applied K-Means and Agglomerative Hierarchical clustering algorithms to group the movies into clusters. The optimal number of clusters was determined using techniques like the elbow method and silhouette score analysis.
+
+### Build Content Based Recommendation System:
+A content-based recommender system was built using the similarity matrix obtained from cosine similarity. This system recommends 10 movies or shows based on the type of movie/show the user has watched.
+
+## Conclusion
+
+In this project, we worked on a text clustering problem where we aimed to classify and group Netflix shows into clusters such that the shows within a cluster are similar to each other, and those in different clusters are dissimilar. The process involved the following steps:
+
+- **Data Cleaning & EDA**: Addressed missing values, identified trends, and explored the data.
+- **Textual Data Preprocessing**: Preprocessed and vectorized the textual data using TFIDF.
+- **Dimensionality Reduction**: Used PCA to reduce the number of features to a manageable level.
+- **Clustering**: Used K-Means clustering to group similar shows.
+- **Recommendation System**: Built a content-based recommendation system based on cosine similarity.
+
+The optimal number of clusters was found to be 4, and the recommender system successfully recommended shows based on the user's viewing preferences.
+
