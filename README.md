@@ -7,12 +7,6 @@ This project implements a content-based recommendation system using machine lear
 - [Project Overview](#project-overview)
 - [Dataset](#dataset)
 - [Data Pipeline](#data-pipeline)
-  - [Analyze Data](#analyze-data)
-  - [EDA](#eda)
-  - [Data Cleaning](#data-cleaning)
-  - [Textual Data Preprocessing](#textual-data-preprocessing)
-  - [Clusters Implementation](#clusters-implementation)
-  - [Build Content Based Recommendation System](#build-content-based-recommendation-system)
 - [Conclusion](#conclusion)
   
 ## Project Overview
@@ -29,16 +23,16 @@ The dataset is collected from Flixable, a third-party Netflix search engine. Thi
 
 ## Data Pipeline
 
-### Analyze Data:
+### 1. Analyze Data:
 In this initial step, we analyzed various features of the dataset. We examined the shape of the data, the data types of each feature, and the statistical summary to better understand the structure and characteristics of the dataset.
 
-### EDA:
+### 2. EDA:
 Exploratory Data Analysis (EDA) is crucial for understanding the patterns and relationships within the data. During EDA, we observed trends and dependencies that were helpful for further data processing.
 
-### Data Cleaning:
+### 3. Data Cleaning:
 Data cleaning involved checking for duplicate entries, handling missing values by replacing them with empty strings or dropping rows, and detecting and treating outliers to ensure clean and usable data.
 
-### Textual Data Preprocessing:
+### 4. Textual Data Preprocessing:
 For clustering, we preprocessed the data based on the following attributes: director, cast, country, genre, rating, and description. This stage involved:
 - Removing stop words and punctuation marks
 - Converting all textual data to lowercase
@@ -47,10 +41,10 @@ For clustering, we preprocessed the data based on the following attributes: dire
 
 Principal Component Analysis (PCA) was used to reduce dimensionality and handle the curse of dimensionality.
 
-### Clusters Implementation:
+### 5. Clusters Implementation:
 We applied K-Means and Agglomerative Hierarchical clustering algorithms to group the movies into clusters. The optimal number of clusters was determined using techniques like the elbow method and silhouette score analysis.
 
-### Build Content Based Recommendation System:
+### 6. Build Content Based Recommendation System:
 A content-based recommender system was built using the similarity matrix obtained from cosine similarity. This system recommends 10 movies or shows based on the type of movie/show the user has watched.
 
 ## Conclusion
